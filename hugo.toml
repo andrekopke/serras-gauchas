@@ -1,4 +1,4 @@
 baseURL = 'https://serras-gauchas.vercel.app/'
 languageCode = 'pt-br'
 title = 'Serras Gaúchas'
-theme = 'ananke'
+
