@@ -2,3 +2,5 @@ baseURL = 'https://serras-gauchas-dlrm.vercel.app/'
 languageCode = 'pt-br'
 title = 'Serras Gaúchas - Guia Oficial'
 theme = 'hugo-theme-stack'
+[permalinks]
+    post = "/p/:slug/"
