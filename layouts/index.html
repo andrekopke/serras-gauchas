@@ -2,31 +2,82 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>{{ .Title }} | Guia Autoridade</title>
+    <title>{{ .Title }} | Guia de Autoridade</title>
     <style>
-        body { font-family: sans-serif; margin: 0; background: #f0f2f5; color: #1c1e21; }
-        header { background: #004a8d; color: white; padding: 20px; text-align: center; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        footer { text-align: center; padding: 20px; color: #666; font-size: 0.8rem; }
-        img { max-width: 100%; height: auto; border-radius: 8px; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background: #f8fafc; color: #1e293b; }
+        header { background: #0f172a; color: white; padding: 40px 20px; text-align: center; }
+        .container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
+        
+        /* Grade de Cards Profissionais */
+        .category-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); 
+            gap: 15px; 
+        }
+        .category-card { 
+            background: white; 
+            padding: 25px 15px; 
+            text-align: center; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: #0f172a; 
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            transition: all 0.2s ease;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 60px;
+        }
+        .category-card:hover { 
+            background: #0f172a; 
+            color: white; 
+            border-color: #0f172a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+        
+        footer { text-align: center; padding: 40px; color: #64748b; font-size: 0.85rem; border-top: 1px solid #e2e8f0; margin-top: 40px; }
     </style>
 </head>
 <body>
     <header>
         <h1>{{ .Title }}</h1>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/descontos">Descontos</a>
-            <a href="/sobre">Sobre</a>
-        </nav>
+        <p>Explore o melhor de Gramado e Canela</p>
     </header>
+
     <div class="container">
-        {{ .Content }}
+        <div class="category-grid">
+            <a href="/tags/alimentacao" class="category-card">Onde Comer</a>
+            <a href="/tags/parques" class="category-card">Parques e Atrações</a>
+            <a href="/tags/roteiros" class="category-card">Roteiros Prontos</a>
+            <a href="/tags/gratuito" class="category-card">Passeios Gratuitos</a>
+            <a href="/tags/hospedagem" class="category-card">Onde Ficar</a>
+            <a href="/tags/compras" class="category-card">Guia de Compras</a>
+            <a href="/tags/clima" class="category-card">Quando Viajar</a>
+            <a href="/tags/transporte" class="category-card">Transporte Local</a>
+            <a href="/tags/eventos" class="category-card">Eventos e Shows</a>
+            <a href="/tags/casais" class="category-card">Viagem Romântica</a>
+            <a href="/tags/familia" class="category-card">Viagem com Crianças</a>
+            <a href="/tags/curiosidades" class="category-card">Curiosidades</a>
+
+            <a href="/tags/dicas" class="category-card">Dicas de Especialista</a>
+            <a href="/descontos" class="category-card">Cupons de Desconto</a>
+            <a href="/tags/aluguel-veiculos" class="category-card">Aluguel de Veículos</a>
+            <a href="/recomendacoes" class="category-card" style="background: #f1f5f9; border: 2px dashed #cbd5e1;">Minhas Recomendações</a>
+        </div>
+
+        <div style="margin-top: 50px; line-height: 1.8;">
+            {{ .Content }}
+        </div>
     </div>
+
     <footer>
-        <p>&copy; 2026 - Criado com o Esqueleto de Autoridade</p>
-        <p><a href="/politicas">Políticas de Privacidade</a></p>
+        &copy; 2026 {{ .Title }} - <a href="/sobre">Sobre o Projeto</a> | <a href="/politicas">Privacidade</a>
     </footer>
 </body>
 </html>
