@@ -2,34 +2,31 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ .Title }} | Serras Gaúchas</title>
+    <title>{{ .Title }} | Guia Autoridade</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #f4f7f6; }
-        header { background: #004a8d; color: white; padding: 40px 20px; text-align: center; border-radius: 8px; margin-bottom: 30px; }
-        h1 { margin: 0; font-size: 2.5rem; }
-        nav { margin-top: 15px; }
-        nav a { color: #fff; margin: 0 10px; text-decoration: none; font-weight: bold; border-bottom: 2px solid transparent; }
-        nav a:hover { border-bottom: 2px solid #ffcc00; }
-        .card { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .cta-button { display: inline-block; background: #28a745; color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; }
-        .cta-button:hover { background: #218838; }
-        footer { text-align: center; margin-top: 50px; font-size: 0.9rem; color: #777; }
+        body { font-family: sans-serif; margin: 0; background: #f0f2f5; color: #1c1e21; }
+        header { background: #004a8d; color: white; padding: 20px; text-align: center; }
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .container { max-width: 900px; margin: 20px auto; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        footer { text-align: center; padding: 20px; color: #666; font-size: 0.8rem; }
+        img { max-width: 100%; height: auto; border-radius: 8px; }
     </style>
 </head>
 <body>
     <header>
-        <h1>🏔️ Serras Gaúchas</h1>
+        <h1>{{ .Title }}</h1>
         <nav>
-            <a href="/">Início</a>
-            <a href="/descontos">💰 Descontos</a>
+            <a href="/">Home</a>
+            <a href="/descontos">Descontos</a>
+            <a href="/sobre">Sobre</a>
         </nav>
     </header>
-    <main class="card">
+    <div class="container">
         {{ .Content }}
-    </main>
+    </div>
     <footer>
-        &copy; 2026 Serras Gaúchas - Guia de Autoridade
+        <p>&copy; 2026 - Criado com o Esqueleto de Autoridade</p>
+        <p><a href="/politicas">Políticas de Privacidade</a></p>
     </footer>
 </body>
 </html>
